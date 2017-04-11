@@ -25584,7 +25584,7 @@
 /* 226 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -25597,16 +25597,23 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'Home',
+	  displayName: "Home",
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'section',
+	      "section",
 	      null,
 	      _react2.default.createElement(
-	        'h1',
+	        "h1",
 	        null,
-	        'Home Page'
-	      )
+	        "Home Page"
+	      ),
+	      _react2.default.createElement("input", {
+	        type: "text",
+	        name: "user",
+	        id: "user",
+	        placeholder: "your name",
+	        required: true
+	      })
 	    );
 	  }
 	});
