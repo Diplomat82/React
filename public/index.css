@@ -1,3 +1,12 @@
 .active {
   color: green;
 }
+#about{
+  border: 1em solid blue;
+}
+#header{
+  border: 1em solid blue;
+}
+#home{
+  border: 1em solid blue;
+}
