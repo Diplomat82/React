@@ -42,7 +42,7 @@ export default class Write extends React.Component {
 
     request
     .post('http://localhost:8888/post')
-    .send({ email: 'Manny', title: title, post: postBody })
+    .send({ email: 'dan@dan.com', title: title, post: postBody })
     .set('Accept', 'application/json')
     .set('Content-Type', 'application/json')
     .set('Access-Control-Allow-Origin', '*')
