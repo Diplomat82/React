@@ -21,7 +21,6 @@ app.get('*', (req, res) => {
     } else if (redirect) {
       res.redirect(redirect.pathname + redirect.search)
     } else if (props) {
-      // hey we made it!
       const appHtml = renderToString(<RouterContext {...props}/>)
       res.send(renderPage(appHtml))
     } else {
@@ -30,17 +29,6 @@ app.get('*', (req, res) => {
   })
 })
 
-function renderPage(appHtml) {
-  return `
-    <!doctype html public="storage">
-    <html>
-    <meta charset=utf-8/>
-    <title>My First React Router App</title>
-    <link rel=stylesheet href=/index.css>
-    <div id=app>${appHtml}</div>
-    <script src="/bundle.js"></script>
-   `
-}
 
 var PORT = process.env.PORT || 8888
 app.listen(PORT, function() {

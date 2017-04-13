@@ -167,7 +167,7 @@
 
 	var _Home2 = _interopRequireDefault(_Home);
 
-	var _Test = __webpack_require__(12);
+	var _Test = __webpack_require__(13);
 
 	var _Test2 = _interopRequireDefault(_Test);
 
@@ -209,38 +209,43 @@
 	      'div',
 	      null,
 	      _react2.default.createElement(
-	        'h1',
-	        null,
-	        'Ready, Set, React'
-	      ),
-	      _react2.default.createElement(
-	        'ul',
-	        { role: 'nav' },
+	        'section',
+	        { id: 'header' },
 	        _react2.default.createElement(
-	          'li',
-	          null,
-	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/', onlyActiveOnIndex: true },
-	            'Home'
-	          )
+	          'h1',
+	          { className: 'text-center' },
+	          'Ready, Set, React'
 	        ),
 	        _react2.default.createElement(
-	          'li',
-	          null,
+	          'section',
+	          { role: 'nav', className: 'row' },
+	          _react2.default.createElement('div', { className: 'col-xs-4' }),
 	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/about' },
-	            'About'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'li',
-	          null,
+	            'div',
+	            { className: 'col-xs-2' },
+	            _react2.default.createElement(
+	              _NavLink2.default,
+	              { to: '/', className: 'text-center', onlyActiveOnIndex: true },
+	              'Home'
+	            )
+	          ),
 	          _react2.default.createElement(
-	            _NavLink2.default,
-	            { to: '/test' },
-	            'Test'
+	            'div',
+	            { className: 'col-xs-2' },
+	            _react2.default.createElement(
+	              _NavLink2.default,
+	              { to: '/about' },
+	              'About'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col-xs-2' },
+	            _react2.default.createElement(
+	              _NavLink2.default,
+	              { to: '/test' },
+	              'Test'
+	            )
 	          )
 	        )
 	      ),
@@ -281,7 +286,7 @@
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -294,27 +299,27 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createClass({
-	  displayName: 'About',
+	  displayName: "About",
 	  render: function render() {
 	    return _react2.default.createElement(
-	      'section',
-	      null,
+	      "section",
+	      { id: "about" },
 	      _react2.default.createElement(
-	        'h1',
+	        "h1",
 	        null,
-	        'Ready, Set, React'
+	        "Ready, Set, React"
 	      ),
 	      _react2.default.createElement(
-	        'p',
+	        "p",
 	        null,
-	        'This application makes a React.js application ready to run'
+	        "This application makes a React.js application ready to run"
 	      ),
 	      _react2.default.createElement(
-	        'p',
+	        "p",
 	        null,
-	        'and ',
+	        "and ",
 	        this.props.name,
-	        ' loves React'
+	        " loves React"
 	      )
 	    );
 	  }
@@ -322,116 +327,6 @@
 
 /***/ },
 /* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _react = __webpack_require__(4);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _About = __webpack_require__(10);
-
-	var _About2 = _interopRequireDefault(_About);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-	// export default React.createClass({
-	//
-	//
-	//
-	//
-	//   Welcome(props) {
-	//     return <h1>Hello, {props.name}</h1>;
-	//   },
-	//
-	//   wow(e){
-	//     console.log("wow: ",e.target.value);
-	//     this.setState({wow: e.target.value});
-	//   },
-	//
-	//
-	//   render() {
-	//
-	//     const element = <this.Welcome name="Sara" />;
-	//     const stateInAction = this.state.wow;
-	//
-	//     return (
-	//       <section>
-	//         <h1>Home Page</h1>
-	//         {element}
-	//         <input
-	//           type="text"
-	//           name="user"
-	//           id="user"
-	//           placeholder="your name"
-	//           onChange={this.wow}
-	//           required
-	//         />
-	//       {stateInAction}
-	//       <About name="Sara"></About>
-	//
-	//       </section>
-	//     )
-	//   }
-	// })
-
-	var NameForm = function (_React$Component) {
-	  _inherits(NameForm, _React$Component);
-
-	  function NameForm(props) {
-	    _classCallCheck(this, NameForm);
-
-	    var _this = _possibleConstructorReturn(this, (NameForm.__proto__ || Object.getPrototypeOf(NameForm)).call(this, props));
-
-	    _this.state = { value: '' };
-
-	    _this.handleChange = _this.handleChange.bind(_this);
-	    _this.handleSubmit = _this.handleSubmit.bind(_this);
-	    return _this;
-	  }
-
-	  _createClass(NameForm, [{
-	    key: 'handleChange',
-	    value: function handleChange(event) {
-	      this.setState({ value: event.target.value });
-	    }
-	  }, {
-	    key: 'handleSubmit',
-	    value: function handleSubmit(event) {
-	      alert('A name was submitted: ' + this.state.value);
-	      event.preventDefault();
-	    }
-	  }, {
-	    key: 'render',
-	    value: function render() {
-	      return _react2.default.createElement(
-	        'form',
-	        { onSubmit: this.handleSubmit },
-	        _react2.default.createElement(
-	          'label',
-	          null,
-	          'Name:',
-	          _react2.default.createElement('input', { type: 'text', value: this.state.value, onChange: this.handleChange })
-	        ),
-	        _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
-	      );
-	    }
-	  }]);
-
-	  return NameForm;
-	}(_react2.default.Component);
-
-/***/ },
-/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -451,7 +346,124 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactBootstrap = __webpack_require__(13);
+	var _reactBootstrap = __webpack_require__(12);
+
+	var _About = __webpack_require__(10);
+
+	var _About2 = _interopRequireDefault(_About);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Home = function (_React$Component) {
+	  _inherits(Home, _React$Component);
+
+	  function Home(props) {
+	    _classCallCheck(this, Home);
+
+	    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+
+	    _this.state = {
+	      wow: ''
+	    };
+	    _this.wow = _this.wow.bind(_this);
+	    return _this;
+	  }
+
+	  _createClass(Home, [{
+	    key: 'componentDidMount',
+	    value: function componentDidMount() {
+	      //onload
+	    }
+	  }, {
+	    key: 'handleSubmit',
+	    value: function handleSubmit(event) {
+	      event.preventDefault();
+	    }
+	  }, {
+	    key: 'Welcome',
+	    value: function Welcome(props) {
+	      return _react2.default.createElement(
+	        'h1',
+	        null,
+	        'Hello, ',
+	        props.name
+	      );
+	    }
+	  }, {
+	    key: 'wow',
+	    value: function wow(e) {
+	      console.log("wow: ", e.target.value);
+	      this.setState({ wow: e.target.value });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+
+	      var element = _react2.default.createElement(this.Welcome, { name: 'Sara' });
+	      var stateInAction = this.state.wow;
+
+	      return _react2.default.createElement(
+	        'section',
+	        { id: 'home' },
+	        _react2.default.createElement(
+	          'h1',
+	          { className: 'text-center' },
+	          'Home Page'
+	        ),
+	        element,
+	        _react2.default.createElement('input', {
+	          type: 'text',
+	          name: 'user',
+	          id: 'user',
+	          placeholder: 'your name',
+	          onChange: this.wow,
+	          required: true
+	        }),
+	        stateInAction,
+	        _react2.default.createElement(_About2.default, { name: 'Sara' })
+	      );
+	    }
+	  }]);
+
+	  return Home;
+	}(_react2.default.Component);
+
+	exports.default = Home;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	module.exports = require("react-bootstrap");
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	/*
+	      Title: file title
+	      Job: file job
+	*/
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(4);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactBootstrap = __webpack_require__(12);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -510,12 +522,6 @@
 	}(_react2.default.Component);
 
 	exports.default = Test;
-
-/***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	module.exports = require("react-bootstrap");
 
 /***/ }
 /******/ ]);

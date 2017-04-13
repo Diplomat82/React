@@ -1,9 +1,5 @@
 'use strict';
 
-/*
-      Title: file title
-      Job: file job
-*/
 
 import React from 'react';
 import { Button } from 'react-bootstrap';
