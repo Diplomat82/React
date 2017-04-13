@@ -25457,7 +25457,7 @@
 	  { path: '/', component: _App2.default },
 	  _react2.default.createElement(_reactRouter.IndexRoute, { component: _Home2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: '/dashboard/:email', component: _Dashboard2.default }),
-	  _react2.default.createElement(_reactRouter.Route, { path: '/write', component: _Write2.default }),
+	  _react2.default.createElement(_reactRouter.Route, { path: '/write/:email', component: _Write2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: '/read', component: _Read2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: '/lifecycles', component: _Lifecycles2.default }),
 	  _react2.default.createElement(_reactRouter.Route, { path: '/test', component: _Test2.default })
@@ -45124,7 +45124,7 @@
 
 	      var user = this.props.params.email;
 	      var style = {
-	        border: '1em solid blue;'
+	        border: '1em solid blue'
 	      };
 
 	      return _react2.default.createElement(
@@ -45157,7 +45157,7 @@
 	                { className: 'col-xs-3' },
 	                _react2.default.createElement(
 	                  _reactRouter.Link,
-	                  { to: '/write', activeClassName: 'active' },
+	                  { to: '/write/' + this.props.params.email, activeClassName: 'active' },
 	                  _react2.default.createElement(
 	                    'button',
 	                    { className: 'btn center-block' },
@@ -45244,7 +45244,7 @@
 	    key: 'componentDidMount',
 	    value: function componentDidMount() {
 	      //onload
-	      console.log("this.props.params", this.props);
+	      console.log("this.props.params", this.props.params.email);
 	    }
 	  }, {
 	    key: 'setTitleValue',
@@ -45263,9 +45263,10 @@
 	    value: function publish(event) {
 	      var title = this.state.title;
 	      var postBody = this.state.post;
+	      var email = this.props.params.email;
 	      event.preventDefault();
 
-	      request.post('http://localhost:8888/post').send({ email: 'Manny', title: title, post: postBody }).set('Accept', 'application/json').set('Content-Type', 'application/json').set('Access-Control-Allow-Origin', '*').end(function (err, res) {
+	      request.post('http://localhost:8888/post').send({ email: email, title: title, post: postBody }).set('Accept', 'application/json').set('Content-Type', 'application/json').set('Access-Control-Allow-Origin', '*').end(function (err, res) {
 	        if (err || !res.ok) {
 	          console.log("error posting new post", err);
 	        } else {
@@ -45278,13 +45279,15 @@
 	    key: 'render',
 	    value: function render() {
 
+	      var user = this.props.params.email;
+
 	      var style = {
 	        width: '30em',
 	        height: '10em'
 	      };
 
 	      var style2 = {
-	        border: '1em solid blue;'
+	        border: '1em solid blue'
 	      };
 
 	      return _react2.default.createElement(
@@ -45333,6 +45336,12 @@
 	          _react2.default.createElement('div', { className: 'col-xs-3' })
 	        ),
 	        _react2.default.createElement('br', null),
+	        _react2.default.createElement(
+	          'h6',
+	          null,
+	          'Post Written By: ',
+	          user
+	        ),
 	        _react2.default.createElement(
 	          _reactBootstrap.Button,
 	          { className: 'center-block', onClick: this.publish },

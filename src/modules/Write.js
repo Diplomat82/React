@@ -22,7 +22,7 @@ export default class Write extends React.Component {
 
   componentDidMount() {
     //onload
-    console.log("this.props.params", this.props);
+    console.log("this.props.params", this.props.params.email);
   }
 
   setTitleValue(e){
@@ -38,11 +38,12 @@ export default class Write extends React.Component {
   publish(event) {
     const title = this.state.title;
     const postBody = this.state.post;
+    const email = this.props.params.email;
     event.preventDefault();
 
     request
     .post('http://localhost:8888/post')
-    .send({ email: 'dan@dan.com', title: title, post: postBody })
+    .send({ email: email, title: title, post: postBody })
     .set('Accept', 'application/json')
     .set('Content-Type', 'application/json')
     .set('Access-Control-Allow-Origin', '*')
@@ -58,13 +59,15 @@ export default class Write extends React.Component {
 
   render() {
 
+    const user = this.props.params.email;
+
     const style = {
       width: '30em',
       height: '10em'
     };
 
     const style2 = {
-      border: '1em solid blue;'
+      border: '1em solid blue'
     }
 
     return (
@@ -96,6 +99,7 @@ export default class Write extends React.Component {
             <div className="col-xs-3"></div>
           </div>
           <br />
+          <h6 className="text-center">Post Written By: {user}</h6>
           <Button className="center-block" onClick={this.publish}>Publish Post</Button>
 
         </section>
