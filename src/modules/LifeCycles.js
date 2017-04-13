@@ -90,7 +90,7 @@ export default class Lifecycles extends React.Component {
             <div className="col-xs-6">
             <h1 className="text-center">Lifecycles</h1>
             <h1 className="text-center">Hi, I am {name}</h1>
-            <Button onClick={this.click} className="center-block">Bootstrap Example</Button>
+            <Button onClick={this.click} className="center-block">DO STUFF</Button>
 
             <br />
 
