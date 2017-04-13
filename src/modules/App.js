@@ -4,7 +4,11 @@ import React from 'react'
 import NavLink from './NavLink'
 
 export default React.createClass({
+
   render() {
+
+    const email = this.props.params.email;
+
     return (
       <div>
         <section id="header">
@@ -15,7 +19,7 @@ export default React.createClass({
                 <NavLink to="/" className="text-center" onlyActiveOnIndex>Home</NavLink>
               </div>
               <div className="col-xs-1">
-                <NavLink to="/write">Write Post</NavLink>
+                <NavLink to="/write/daniel@dwyer.com">Write Post</NavLink>
               </div>
               <div className="col-xs-1">
                 <NavLink to="/read">Read Posts</NavLink>
