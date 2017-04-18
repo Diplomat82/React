@@ -3,7 +3,7 @@ module.exports = {
 
     development: {
         client: 'pg',
-        connection: 'postgresql://localhost/react-lightning'
+        connection: 'postgresql://localhost/DATABASE_NAME'
     },
 
     production: {

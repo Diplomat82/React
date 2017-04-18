@@ -19,13 +19,13 @@ export default React.createClass({
                 <NavLink to="/" className="text-center" onlyActiveOnIndex>Home</NavLink>
               </div>
               <div className="col-xs-1">
-                <NavLink to="/write/daniel@dwyer.com">Write Post</NavLink>
+                <NavLink to="/path">Option</NavLink>
               </div>
               <div className="col-xs-1">
-                <NavLink to="/read">Read Posts</NavLink>
+                <NavLink to="/path">Option</NavLink>
               </div>
               <div className="col-xs-1">
-                <NavLink to="/lifecycles">Lifecycles</NavLink>
+                <NavLink to="/path">Option</NavLink>
               </div>
         </section>
         </section>

@@ -14,20 +14,30 @@ export default class Home extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
-  Welcome(props) {
-    return <h1>Hello, {props.email}</h1>;
-  }
-
   onChange(e){
-    console.log("email: ",e.target.value);
     this.setState({email: e.target.value});
   }
 
+  /*
+  componentDidMount() {
+    var that = this;
+    request
+    .get('http://localhost:8888/post')
+    .set('Accept', 'application/json')
+    .set('Content-Type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*')
+    .end(function(err, res){
+      if (err || !res.ok) {
+        console.log("error gettings posts", err);
+      } else {
+        console.log("success gettings posts", res.body.result);
+        that.setState({posts: res.body.result})
+      }
+    });
+  }
+  */
 
   render() {
-
-    const element = <this.Welcome email="Sara" />;
-    const stateInAction = this.state.email;
 
     var style = {
       color: 'purple'
@@ -42,18 +52,8 @@ export default class Home extends React.Component {
                 <div className="col-xs-4"></div>
 
                 <div className="col-xs-4">
-                    <h1 className="text-center" style={style}>Login Using Email</h1>
-                    <input
-                      type="text"
-                      name="user"
-                      id="user"
-                      placeholder="your email"
-                      onChange={this.onChange}
-                      className="center-block"
-                      required
-                    />
-                    <br />
-                    <Link to={'/dashboard/'+this.state.email} activeClassName="active"><button className="btn center-block">Login</button></Link>
+                    <h1 className="text-center" style={style}>Landing Page</h1>
+                    <Link to={'/dashboard'} activeClassName="active"><button className="btn center-block">Take Me To The Dashboard</button></Link>
                 </div>
 
                 <div className="col-xs-4"></div>
