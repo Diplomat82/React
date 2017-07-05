@@ -7,51 +7,14 @@ import routes from './src/modules/routes'
 var cors = require('cors')
 var bodyParser = require('body-parser')
 var knex = require('./db/knex.js');
-
 var app = express()
 app.use(cors())
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
-app.use(bodyParser.json())
-
-// post post
-app.post('/post', (req, res) => {
-  knex('posts')
-    .insert({
-      title: req.body.title,
-      post: req.body.post,
-      email: req.body.email,
-      date: new Date().toLocaleString()
-    })
-    .then(function(result){
-      console.log("Success posting new post to DB", result);
-      res.status(200).send('Success')
-    })
-    .catch(function(error){
-      console.log("Error posting new post to DB", error);
-      res.status(404).send('Failed')
-    })
-})
-
-// get post
-app.get('/post', (req, res) => {
-  console.log("get 3 most recent posts");
-    knex('posts')
-      .select('*')
-      .limit(3)
-      .orderBy('id', 'desc')
-      .then(function(result){
-        console.log("Success getting 3 posts from DB", result);
-        res.json({result: result})
-        // res.status(200).send('Success')
-      })
-      .catch(function(error){
-        console.log("Error getting 3 posts from DB", error);
-        res.status(404).send('Failed')
-      })
-})
+app.use(bodyParser.json());
 
 // serve our static stuff like index.css
 app.use(express.static(path.join(__dirname, 'public'), {index: false}))
@@ -79,7 +42,7 @@ function renderPage(appHtml) {
     <head>
       <meta charset=utf-8/>
       <title>
-        Ready, Set, React
+        React
       </title>
 
       <!-- Bootstrap CDN -->
